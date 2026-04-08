@@ -10,9 +10,18 @@ use Psr\Http\Message\StreamFactoryInterface;
 
 class InertiaFactory implements InertiaFactoryInterface
 {
-    private ResponseFactoryInterface $responseFactory;
-    private StreamFactoryInterface $streamFactory;
-    private RootViewProviderInterface $rootViewProvider;
+    /**
+     * @var ResponseFactoryInterface
+     */
+    private $responseFactory;
+    /**
+     * @var StreamFactoryInterface
+     */
+    private $streamFactory;
+    /**
+     * @var RootViewProviderInterface
+     */
+    private $rootViewProvider;
 
     public function __construct(
         ResponseFactoryInterface $responseFactory, 

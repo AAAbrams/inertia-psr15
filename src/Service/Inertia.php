@@ -13,11 +13,26 @@ use Psr\Http\Message\StreamFactoryInterface;
 
 class Inertia implements InertiaInterface
 {
-    private ServerRequestInterface $request;
-    private ResponseFactoryInterface $responseFactory;
-    private StreamFactoryInterface $streamFactory;
-    private RootViewProviderInterface $rootViewProvider;
-    private Page $page;
+    /**
+     * @var ServerRequestInterface
+     */
+    private $request;
+    /**
+     * @var ResponseFactoryInterface
+     */
+    private $responseFactory;
+    /**
+     * @var StreamFactoryInterface
+     */
+    private $streamFactory;
+    /**
+     * @var RootViewProviderInterface
+     */
+    private $rootViewProvider;
+    /**
+     * @var Page
+     */
+    private $page;
 
     public function __construct(
         ServerRequestInterface $request, 

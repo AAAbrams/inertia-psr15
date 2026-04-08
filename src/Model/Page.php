@@ -8,10 +8,22 @@ use JsonSerializable;
 
 final class Page implements JsonSerializable
 {
-    private ?string $component;
-    private array $props;
-    private ?string $url;
-    private ?string $version;
+    /**
+     * @var string|null
+     */
+    private $component;
+    /**
+     * @var array
+     */
+    private $props;
+    /**
+     * @var string|null
+     */
+    private $url;
+    /**
+     * @var string|null
+     */
+    private $version;
 
     private function __construct(?string $component = null, array $props = [], ?string $url = null, ?string $version = null)
     {

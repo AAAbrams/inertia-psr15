@@ -10,7 +10,10 @@ use Cherif\InertiaPsr15\Model\Page;
 class RootViewProviderDecorator implements RootViewProviderInterface
 {
     private $decorated;
-    private string $rootView;
+    /**
+     * @var string
+     */
+    private $rootView;
 
     public function __construct(callable $decorated, string $rootView)
     {

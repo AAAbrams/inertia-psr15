@@ -18,17 +18,17 @@ class InertiaMiddleware implements MiddlewareInterface
     /**
      * @var InertiaFactoryInterface 
      */
-    private InertiaFactoryInterface $inertiaFactory;
+    private $inertiaFactory;
 
     /**
      * @var string 
      */
-    private string $attributeKey;
+    private $attributeKey;
 
     /**
      * @var InertiaInterface 
      */
-    private InertiaInterface $inertia;
+    private $inertia;
 
     /**
      * InertiaMiddleware constructor.
