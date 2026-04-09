@@ -1,5 +1,5 @@
 {
-    "name": "aaabrams/inertia-psr15",
+    "name": "libra/inertia-psr15",
     "version": "1.0",
     "description": "InertiaJS server-side adapter for PSR-7 and PSR-15 applications",
     "type": "library",
