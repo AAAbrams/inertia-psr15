@@ -44,6 +44,24 @@ class InertiaMiddleware implements MiddlewareInterface
         $this->attributeKey = $attributeKey;
     }
 
+    public function __invoke(Request $request, Response $response, callable $next)
+    {
+        $this->inertia = $this->inertiaFactory->fromRequest($request);
+
+        $request = $request->withAttribute($this->attributeKey, $this->inertia);
+        if (!$request->hasHeader('X-Inertia')) {
+            return $next($request, $response);
+        }
+        /** @var Response $response */
+        $response = $next($request, $response)
+            ->withAddedHeader('Vary', 'Accept')
+            ->withAddedHeader('X-Inertia', 'true');
+
+        $response = $this->checkVersion($request, $response);
+        $response = $this->changeRedirectCode($request, $response);
+        return $response;
+    }
+
     /**
      * @param Request $request
      * @param Handler $handler
